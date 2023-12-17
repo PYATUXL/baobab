@@ -1,0 +1,18 @@
+<?php
+function sortDescending($array){
+    $sortedArray = $array;
+    for ($i = 0; $i < count($sortedArray); $i++) {
+        for ($j = $i + 1; $j < count($sortedArray); $j++) {
+            if ($sortedArray[$i] < $sortedArray[$j]) {
+                $temp = $sortedArray[$i];
+                $sortedArray[$i] = $sortedArray[$j];
+                $sortedArray[$j] = $temp;
+            }
+        }
+    }
+    return $sortedArray;
+}
+
+$numbers = [3, 6, 1, 9, 2, 5];
+$sortedNumbers = sortDescending($numbers);
+print_r($sortedNumbers);
